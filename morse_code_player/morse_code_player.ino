@@ -1,6 +1,6 @@
 int buzzerPin = 11;
-float wpm = 20.0;
-String string = "PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS ";
+float wpm = 8.0;
+String string = "PARIS ";
 
 int timeScale = 1200.0 / wpm;
 
