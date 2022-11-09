@@ -1,8 +1,8 @@
-int buzzerPin = 11;
+int buzzerPin = 3;
 float wpm = 8.0;
-String string = "PARIS ";
+String string = "Hello there";  // Use \" to insert double quotes.
 
-int timeScale = 1200.0 / wpm;
+int timeScale = 1200.0 / wpm;  // Calculate the number of milliseconds to spend on a dot.
 
 int dotTime = 1;
 int dashTime = 3;
@@ -23,6 +23,9 @@ void setup() {
     play_string(string);
 }
 
+/**
+ * This function must remain for the sketch to compile.
+ */
 void loop() {
 
 }
