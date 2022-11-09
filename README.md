@@ -5,4 +5,4 @@ This project plays a piece of text in Morse Code using a buzzer connected to an 
 ![Schematic](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/blob/main/Schematic.png)
 
 ## Setup Photo
-![Setup](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/blob/main/Setup.png)
+![Setup](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/blob/main/Setup.jpg)
