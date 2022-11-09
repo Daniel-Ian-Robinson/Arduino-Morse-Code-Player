@@ -1,6 +1,6 @@
 int buzzerPin = 3;
 float wpm = 8.0;
-String string = "Hello there";  // Use \" to insert double quotes.
+String string = "abcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )";  // Use \" to insert double quotes.
 
 int timeScale = 1200.0 / wpm;  // Calculate the number of milliseconds to spend on a dot.
 

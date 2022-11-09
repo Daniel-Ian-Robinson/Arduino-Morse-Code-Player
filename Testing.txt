@@ -1,0 +1,5 @@
+Test each character using the following string:
+	"abcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )"
+There should be an end of word gap between the end of the letters and the start of the digits, between the end of the digits and the comma, and between each special character.
+
+"PARIS " duplicated (with the space) by the number of words per minute you are testing for. This will prove if the buzzer plays at the desired WPM rate.
