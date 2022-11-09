@@ -1,5 +1,9 @@
 int buzzerPin = 11;
-int timeScale = 150;
+int timeScale = 50;
+String string = "PARIS ";
+
+int timeUnits = 0;
+
 int dotTime = 1;
 int dashTime = 3;
 int symbolGap = 1;  // Same as dot time.
@@ -8,7 +12,6 @@ int wordGap = 7;
 
 void setup() {
     Serial.begin(9600);
-    
     pinMode(buzzerPin, OUTPUT);
     digitalWrite(buzzerPin, LOW);
 
@@ -18,14 +21,12 @@ void setup() {
     letterGap *= timeScale;
     wordGap *= timeScale;
 
-    String string = "Testing";
     play_string(string);
+    Serial.println(timeUnits);
 }
 
 void loop() {
-    
-    //play_letter('a');
-    //play_letter_gap();
+
 }
 
 void play_string(String s) {
@@ -47,39 +48,49 @@ void play_string(String s) {
 
 void play_character(char c) {
     String morseCode = translate_to_morse_code(c);
+    bool firstCharacter = true;
 
     for (char c : morseCode) {
+        if (firstCharacter) {
+            firstCharacter = false;
+        } else {
+            play_symbol_gap();
+        }
+        
         if (c == '.') {
             play_dot();
         } else {
             play_dash();
         }
-        
-        play_symbol_gap();
     }
 }
 
 void play_dot() {
     digitalWrite(buzzerPin, HIGH);
+    timeUnits += 1;
     delay(dotTime);
     digitalWrite(buzzerPin, LOW);
 }
 
 void play_dash() {
     digitalWrite(buzzerPin, HIGH);
+    timeUnits += 3;
     delay(dashTime);
     digitalWrite(buzzerPin, LOW);
 }
 
 void play_symbol_gap() {
+    timeUnits += 1;
     delay(symbolGap);
 }
 
 void play_letter_gap() {
+    timeUnits += 3;
     delay(letterGap);
 }
 
 void play_word_gap() {
+    timeUnits += 7;
     delay(wordGap);
 }
 
@@ -162,6 +173,67 @@ String translate_to_morse_code(char c) {
     else if (c == 'Z' || c == 'z') {
         return "--..";
     }
-    else
+    else if (c == '0') {
+        return "-----";
+    }
+    else if (c == '1') {
+        return ".----";
+    }
+    else if (c == '2') {
+        return "..---";
+    }
+    else if (c == '3') {
+        return "...--";
+    }
+    else if (c == '4') {
+        return "....-";
+    }
+    else if (c == '5') {
+        return ".....";
+    }
+    else if (c == '6') {
+        return "-....";
+    }
+    else if (c == '7') {
+        return "--...";
+    }
+    else if (c == '8') {
+        return "---..";
+    }
+    else if (c == '9') {
+        return "----.";
+    }
+    else if (c == ',') {
+        return "--..--";
+    }
+    else if (c == '.') {
+        return ".-.-.-";
+    }
+    else if (c == '?') {
+        return "..--..";
+    }
+    else if (c == '"') {
+        return ".-..-.";
+    }
+    else if (c == ':') {
+        return "---...";
+    }
+    else if (c == "'"[0]) {  // Gets the apostrophe at index 0 in the string.
+        return ".----.";
+    }
+    else if (c == '-') {
+        return "-....-";
+    }
+    else if (c == '/') {
+        return "-..-.";
+    }
+    else if (c == '(') {
+        return "-.--.";
+    }
+    else if (c == ')') {
+        return "-.--.-";
+    }
+    else {
         return "";
+    }
 }
