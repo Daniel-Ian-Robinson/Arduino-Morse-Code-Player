@@ -1,17 +1,16 @@
 int buzzerPin = 11;
-int timeScale = 50;
-String string = "PARIS ";
+float wpm = 20.0;
+String string = "PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS ";
 
-int timeUnits = 0;
+int timeScale = 1200.0 / wpm;
 
 int dotTime = 1;
 int dashTime = 3;
 int symbolGap = 1;  // Same as dot time.
-int letterGap = 3;
+int letterGap = 3;  // Same as three dot times.
 int wordGap = 7;
 
 void setup() {
-    Serial.begin(9600);
     pinMode(buzzerPin, OUTPUT);
     digitalWrite(buzzerPin, LOW);
 
@@ -22,7 +21,6 @@ void setup() {
     wordGap *= timeScale;
 
     play_string(string);
-    Serial.println(timeUnits);
 }
 
 void loop() {
@@ -67,30 +65,25 @@ void play_character(char c) {
 
 void play_dot() {
     digitalWrite(buzzerPin, HIGH);
-    timeUnits += 1;
     delay(dotTime);
     digitalWrite(buzzerPin, LOW);
 }
 
 void play_dash() {
     digitalWrite(buzzerPin, HIGH);
-    timeUnits += 3;
     delay(dashTime);
     digitalWrite(buzzerPin, LOW);
 }
 
 void play_symbol_gap() {
-    timeUnits += 1;
     delay(symbolGap);
 }
 
 void play_letter_gap() {
-    timeUnits += 3;
     delay(letterGap);
 }
 
 void play_word_gap() {
-    timeUnits += 7;
     delay(wordGap);
 }
 
