@@ -2,8 +2,11 @@
 /********* SELECT YOUR TEXT AND SPEED **********/
 /***********************************************/
 
-/** The string to play in Morse Code. */
-const String TEXT = "Insert your text here!";
+/** The string to play in Morse Code. You can use any of the following characters:
+ * ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?":'-/()
+ * If you wish to use double quotes, ensure you use an escape character.
+ */
+const String TEXT = "Insert your text here.";
 
 /** The Morse Code speed in Words Per Minute. */
 const float WPM = 9.0;
@@ -54,7 +57,7 @@ void loop() {
 void playString(String s) {
     bool prevCharWasLetter = false;
     
-    for (uint8_t i = 0; i < s.length(); i++) {  // Compiler warning said to use an unsigned integer since s.length() is unsigned.
+    for (uint8_t i = 0; i < s.length(); i++) {  // Compiler wanted an unsigned integer since s.length() is unsigned.
         if (s[i] != ' ') {
             if (prevCharWasLetter) {
                 playLetterGap();
