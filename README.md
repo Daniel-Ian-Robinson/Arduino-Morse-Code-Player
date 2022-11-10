@@ -32,7 +32,7 @@ I have not set up any automated testing since this is a small project. However, 
 
 #### Character Encoding Correctness
 Test each character using the following string:
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )"
+`"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )"`
 
 Confirm that the buzzer plays the correct encoding for each character. Refer to this [Cheat Sheet](Images/Morse-Code-Cheat-Sheet.jpg) which is from [Merriam-Webster](https://www.merriam-webster.com/dictionary/Morse%20code).
 
