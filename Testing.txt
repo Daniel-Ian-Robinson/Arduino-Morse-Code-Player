@@ -1,8 +1,11 @@
+## Character Encoding Correctness
 Test each character using the following string:
-	"abcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )"
+	"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPWRSTUVWXYZ 0123456789 , . ? \" : ' - / ( )"
 There should be an end of word gap between the end of the letters and the start of the digits, between the end of the digits and the comma, and between each special character.
 
+## WPM Accuracy
 "PARIS PARIS PARIS " at 3WPM should finish in one minute.
 "PARIS PARIS PARIS PARIS PARIS PARIS PARIS " at 7WPM should finish in one minute.
 "PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS " at 7WPM should finish in one minute.
 "PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS " at 21WPM should finish in one minute.
+Run the above tests at a faster speed and adjust the expected time accordingly to complete the tests in less time. For example, "PARIS PARIS PARIS " at 9WPM should take 20 seconds.
