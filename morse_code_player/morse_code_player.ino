@@ -6,7 +6,7 @@
 const String TEXT = "Insert your text here!";
 
 /** The Morse Code speed in Words Per Minute. */
-const float WPM = 8.0;
+const float WPM = 9.0;
 
 /***********************************************/
 /***********************************************/
