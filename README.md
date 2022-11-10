@@ -1,5 +1,5 @@
-# Arduino Morse Code Buzzer
-This project plays a piece of text in Morse Code using a buzzer connected to an Arduino Uno board.
+# Arduino Morse Code Player
+This project plays a piece of text in Morse Code using a buzzer and an LED on an Arduino Uno board.
 
 Currently, I have encoded all of the following characters:
 
@@ -8,8 +8,10 @@ Currently, I have encoded all of the following characters:
 ## Required Components
 - Arduino Uno (other boards should work)
 - Buzzer
+- LED
+- 220Ω Resistor
 - Breadboard
-- 3 Jumper Wires
+- 5 Jumper Wires
 - USB A (male) to USB B (male) Cable
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
@@ -24,7 +26,7 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 *Note: the buzzer symbol is not accurate so inspect your buzzer to connect the pins correctly.*
 
 ## Words Per Minute
-This code measures its Morse Code speed in words per minute (WPM). This is the number of times the buzzer can play the word `"PARIS "` (including the space at the end) in a minute. This is a standard measure.
+This code measures its Morse Code speed in words per minute (WPM). This is the number of times the program can play the word `"PARIS "` (including the space at the end) in a minute. This is a standard measure.
 
 ## Testing
 I have not set up any automated testing since this is a small project. However, the following testing is very comprehensive and should suffice.
@@ -36,7 +38,7 @@ Test each acceptable character using the following string:
 
 For the above string, please note that `\"` means `"` but the escape character is required in a C++ string.
 
-Confirm that the buzzer plays the correct encoding for each character. Refer to the following from [Merriam-Webster](https://www.merriam-webster.com/dictionary/Morse%20code):
+Confirm that the buzzer and LED encode each character correctly. Refer to the following from [Merriam-Webster](https://www.merriam-webster.com/dictionary/Morse%20code):
 
 ![Morse Code](Images/Morse-Code-Cheat-Sheet.jpg)
 
