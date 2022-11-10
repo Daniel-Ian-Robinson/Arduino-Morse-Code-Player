@@ -1,4 +1,5 @@
 /***********************************************/
+/***********************************************/
 
 /** The string to play in Morse Code. */
 const String TEXT = "Insert your text here!";
@@ -6,6 +7,7 @@ const String TEXT = "Insert your text here!";
 /** The Morse Code speed in Words Per Minute. */
 const float WPM = 8.0;
 
+/***********************************************/
 /***********************************************/
 
 
