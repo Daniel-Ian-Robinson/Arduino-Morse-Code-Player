@@ -10,7 +10,7 @@ This project plays a piece of text in Morse Code using a buzzer connected to an 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
 ## Compilation
-Setup the components according to the [Schematic](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/edit/main/README.md#schematic) or the [Photo](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/edit/main/README.md#setup) below. Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in the Arduino IDE. Please note, this file must be within a folder named "morse_code_player".
+Setup the components according to the [Schematic](#schematic) or the [Photo](#setup) below. Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in the Arduino IDE. Please note, this file must be within a folder named "morse_code_player".
 
 At the top of the code, select your desired Morse Code speed (WPM = Words Per Minute) and the string you want it to play. Finally, connect your Arduino to your computer with the USB cable and press "Upload" in the IDE.
 
