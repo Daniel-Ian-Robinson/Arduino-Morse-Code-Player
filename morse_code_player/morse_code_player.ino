@@ -20,7 +20,7 @@ const int SYMBOL_GAP_TIME_UNITS = 1;
 const int LETTER_GAP_TIME_UNITS = 3;
 const int WORD_GAP_TIME_UNITS = 7;
 
-int msPerTimeUnit = 1200.0 / WPM;
+int msPerTimeUnit = 1200.0 / WPM;  // Based on the "PARIS " test word.
 int dotTime = DOT_TIME_UNITS * msPerTimeUnit;
 int dashTime = DASH_TIME_UNITS * msPerTimeUnit;
 int symbolGapTime = SYMBOL_GAP_TIME_UNITS * msPerTimeUnit;
@@ -42,9 +42,7 @@ void setup() {
 /**
  * This function must remain for the sketch to compile.
  */
-void loop() {
-
-}
+void loop() {}
 
 /**
  * Plays a string in Morse Code on the buzzer and the LED.
