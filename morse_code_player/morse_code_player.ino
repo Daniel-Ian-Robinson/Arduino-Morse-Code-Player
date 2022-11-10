@@ -47,7 +47,7 @@ void loop() {
 }
 
 /**
- * Plays a string in Morse Code on the buzzer.
+ * Plays a string in Morse Code on the buzzer and the LED.
  * 
  * @param s The string to play.
  */
@@ -71,7 +71,7 @@ void playString(String s) {
 }
 
 /**
- * Plays a character in Morse Code on the buzzer.
+ * Plays a character in Morse Code on the buzzer and the LED.
  * 
  * @param c The character to play.
  */
