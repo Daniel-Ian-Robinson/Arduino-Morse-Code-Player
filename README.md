@@ -1,6 +1,10 @@
 # Arduino Morse Code Buzzer
 This project plays a piece of text in Morse Code using a buzzer connected to an Arduino Uno board.
 
+Currently, I have encoded all of the following characters:
+
+	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?":'-/()
+
 ## Required Components
 - Arduino Uno (other boards should work)
 - Buzzer
