@@ -16,6 +16,9 @@ const float WPM = 9.0;
 /***********************************************/
 
 
+/** The pin on the Arduino board connected to the LED. */
+const int LED_PIN = 2;
+
 /** The pin on the Arduino board connected to the buzzer's data pin. */
 const int BUZZER_PIN = 3;
 
@@ -36,7 +39,9 @@ int wordGapTime = WORD_GAP_TIME_UNITS * msPerTimeUnit;
  * Setup the buzzer control pin and play the string in Morse Code.
  */
 void setup() {
+    pinMode(LED_PIN, OUTPUT);
     pinMode(BUZZER_PIN, OUTPUT);
+    digitalWrite(LED_PIN, LOW);
     digitalWrite(BUZZER_PIN, LOW);
     
     playString(TEXT);
@@ -99,14 +104,18 @@ void playCharacter(char c) {
 
 void playDot() {
     digitalWrite(BUZZER_PIN, HIGH);
+    digitalWrite(LED_PIN, HIGH);
     delay(dotTime);
     digitalWrite(BUZZER_PIN, LOW);
+    digitalWrite(LED_PIN, LOW);
 }
 
 void playDash() {
     digitalWrite(BUZZER_PIN, HIGH);
+    digitalWrite(LED_PIN, HIGH);
     delay(dashTime);
     digitalWrite(BUZZER_PIN, LOW);
+    digitalWrite(LED_PIN, LOW);
 }
 
 void playSymbolGap() {
