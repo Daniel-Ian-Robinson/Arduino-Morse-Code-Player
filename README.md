@@ -25,19 +25,22 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 ![Setup](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/blob/main/Schematics/Setup.jpg)
 
 ## Words Per Minute
-This code measures its Morse Code speed in words per minute (WPM). This is the number of times the buzzer can play the word "PARIS " (including the space at the end) in a minute. This is a standard measure.
+This code measures its Morse Code speed in words per minute (WPM). This is the number of times the buzzer can play the word `"PARIS "` (including the space at the end) in a minute. This is a standard measure.
 
 ## Testing
-I have not set up any automated testing since this is a small project. However, the following is very comprehesnive and should suffice.
+I have not set up any automated testing since this is a small project. However, the following testing is very comprehensive and should suffice.
 
-### Character Encoding Correctness
+#### Character Encoding Correctness
 Test each character using the following string:
-	"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPWRSTUVWXYZ 0123456789 , . ? \" : ' - / ( )"
-There should be an end of word gap between the end of the letters and the start of the digits, between the end of the digits and the comma, and between each special character.
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789 , . ? \" : ' - / ( )"
 
-### WPM Accuracy
+Confirm that the buzzer plays the correct encoding for each character. Refer to this [Cheat Sheet](Images/Morse-Code-Cheat-Sheet.jpg) which is from [Merriam-Webster](https://www.merriam-webster.com/dictionary/Morse%20code).
+
+#### WPM Accuracy
 1. `"PARIS PARIS PARIS "` at 3WPM should take one minute.
 2. `"PARIS PARIS PARIS PARIS PARIS PARIS PARIS "` at 7WPM should take one minute.
 3. `"PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS "` at 12WPM should take one minute.
 4. `"PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS PARIS "` at 21WPM should take one minute.
 5. Run the above tests at a faster speed and adjust the expected time accordingly to complete the tests in less time. For example, "PARIS PARIS PARIS " at 9WPM should take 20 seconds. This is because we can multiply the speed by three and divide the time by three.
+
+These tests also ensure the program uses the correct timing for rests between dots and dashes, letters, and words.
