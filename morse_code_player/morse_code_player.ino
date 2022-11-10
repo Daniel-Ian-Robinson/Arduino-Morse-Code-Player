@@ -1,11 +1,16 @@
-/** The pin on the Arduino board connected to the buzzer's data pin. */
-const int BUZZER_PIN = 3;
+/***********************************************/
+
+/** The string to play in Morse Code. */
+const String string = "Insert your string here!";
 
 /** The Morse Code speed in Words Per Minute. */
 const float WPM = 8.0;
 
-/** The string to play in Morse Code. */
-String string = "Insert your string here!";
+/***********************************************/
+
+
+/** The pin on the Arduino board connected to the buzzer's data pin. */
+const int BUZZER_PIN = 3;
 
 const int DOT_TIME_UNITS = 1;
 const int DASH_TIME_UNITS = 3;
