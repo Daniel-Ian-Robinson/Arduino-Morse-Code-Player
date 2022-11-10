@@ -1,20 +1,12 @@
-/***********************************************/
-/********* SELECT YOUR TEXT AND SPEED **********/
-/***********************************************/
-
-/** The string to play in Morse Code. You can use any of the following characters:
- * ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?":'-/()
- * If you wish to use double quotes, ensure you use an escape character.
+/**
+ * The string to play in Morse Code. You can use any upper or lower case letter, any digit,
+ * or any of the following symbols: ,.?":'-/(). If you wish to use double quotes, ensure you
+ * use an escape character.
  */
 const String TEXT = "Insert your text here.";
 
 /** The Morse Code speed in Words Per Minute. */
 const float WPM = 9.0;
-
-/***********************************************/
-/***********************************************/
-/***********************************************/
-
 
 /** The pin on the Arduino board connected to the LED. */
 const int LED_PIN = 2;
@@ -36,7 +28,7 @@ int letterGapTime = LETTER_GAP_TIME_UNITS * msPerTimeUnit;
 int wordGapTime = WORD_GAP_TIME_UNITS * msPerTimeUnit;
 
 /**
- * Setup the buzzer control pin and play the string in Morse Code.
+ * Setup the buzzer and LED control pins and play the string in Morse Code.
  */
 void setup() {
     pinMode(LED_PIN, OUTPUT);
@@ -64,6 +56,7 @@ void playString(String s) {
     
     for (uint8_t i = 0; i < s.length(); i++) {  // Compiler warning said to use an unsigned integer since s.length() is unsigned.
         if (s[i] != ' ') {
+            // Only pause for the gap between letters if the previous character was a letter.
             if (prevCharWasLetter) {
                 playLetterGap();
             }
