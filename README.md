@@ -23,4 +23,4 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 ## Notes
 
 ###### Words Per Minute
-This code measures words per minute (WPM) as the number of times the buzzer can play the word "PARIS " (including the space at the end) in a minute. This is a standard measure.
+This code measures its Morse Code speed in words per minute (WPM). This is the number of times the buzzer can play the word "PARIS " (including the space at the end) in a minute. This is a standard measure.
