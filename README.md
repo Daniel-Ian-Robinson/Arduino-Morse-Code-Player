@@ -1,7 +1,7 @@
 # Arduino Morse Code Buzzer
 This project plays a piece of text in Morse Code using a buzzer connected to an Arduino Uno board.
 
-## Requirements
+## Required Components
 - Arduino Uno (other boards should work)
 - Buzzer
 - Breadboard
