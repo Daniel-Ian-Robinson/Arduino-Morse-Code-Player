@@ -21,6 +21,8 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 ## Schematic
 ![Schematic](https://github.com/Daniel-Ian-Robinson/Arduino-Buzzer-Morse-Code/blob/main/Schematic/Schematic.png)
 
+*Note: the buzzer symbol is not accurate so inspect your buzzer to connect the pins correctly.*
+
 ## Words Per Minute
 This code measures its Morse Code speed in words per minute (WPM). This is the number of times the buzzer can play the word `"PARIS "` (including the space at the end) in a minute. This is a standard measure.
 
