@@ -57,7 +57,7 @@ void loop() {
 void playString(String s) {
     bool prevCharWasLetter = false;
     
-    for (uint8_t i = 0; i < s.length(); i++) {  // Compiler wanted an unsigned integer since s.length() is unsigned.
+    for (uint8_t i = 0; i < s.length(); i++) {  // Compiler warning said to use an unsigned integer since s.length() is unsigned.
         if (s[i] != ' ') {
             if (prevCharWasLetter) {
                 playLetterGap();
