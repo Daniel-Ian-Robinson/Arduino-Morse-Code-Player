@@ -1,14 +1,19 @@
-int buzzerPin = 3;  // The pin on the Arduino board connected to the buzzer's data pin.
-float wpm = 8.0;  // The Morse Code speed in Words Per Minute.
-String string = "Insert";  // The string to play in Morse Code.
+/** The pin on the Arduino board connected to the buzzer's data pin. */
+const int BUZZER_PIN = 3;
 
-int DOT_TIME_UNITS = 1;
-int DASH_TIME_UNITS = 3;
-int SYMBOL_GAP_TIME_UNITS = 1;
-int LETTER_GAP_TIME_UNITS = 3;
-int WORD_GAP_TIME_UNITS = 7;
+/** The Morse Code speed in Words Per Minute. */
+const float WPM = 8.0;
 
-int msPerTimeUnit = 1200.0 / wpm;
+/** The string to play in Morse Code. */
+String string = "Insert your string here!";
+
+const int DOT_TIME_UNITS = 1;
+const int DASH_TIME_UNITS = 3;
+const int SYMBOL_GAP_TIME_UNITS = 1;
+const int LETTER_GAP_TIME_UNITS = 3;
+const int WORD_GAP_TIME_UNITS = 7;
+
+int msPerTimeUnit = 1200.0 / WPM;
 int dotTime = DOT_TIME_UNITS * msPerTimeUnit;
 int dashTime = DASH_TIME_UNITS * msPerTimeUnit;
 int symbolGapTime = SYMBOL_GAP_TIME_UNITS * msPerTimeUnit;
@@ -19,10 +24,10 @@ int wordGapTime = WORD_GAP_TIME_UNITS * msPerTimeUnit;
  * Setup the buzzer control pin and play the string in Morse Code.
  */
 void setup() {
-    pinMode(buzzerPin, OUTPUT);
-    digitalWrite(buzzerPin, LOW);
+    pinMode(BUZZER_PIN, OUTPUT);
+    digitalWrite(BUZZER_PIN, LOW);
     
-    play_string(string);
+    playString(string);
 }
 
 /**
@@ -32,63 +37,75 @@ void loop() {
 
 }
 
-void play_string(String s) {
+/**
+ * Plays a string in Morse Code on the buzzer.
+ * 
+ * @param s The string to play.
+ */
+void playString(String s) {
     bool prevCharWasLetter = false;
+    
     for (uint8_t i = 0; i < s.length(); i++) {  // Compiler warning said to use an unsigned integer since s.length() is unsigned.
         if (s[i] != ' ') {
             if (prevCharWasLetter) {
-                play_letter_gap();
+                playLetterGap();
             }
             
             prevCharWasLetter = true;
-            play_character(s[i]);
+            playCharacter(s[i]);
         } else {
             prevCharWasLetter = false;
-            play_word_gap();
+            playWordGap();
         }
     }
 }
 
-void play_character(char c) {
-    String morseCode = translate_to_morse_code(c);
-    bool firstCharacter = true;
+/**
+ * Plays a character in Morse Code on the buzzer.
+ * 
+ * @param c The character to play.
+ */
+void playCharacter(char c) {
+    String morseCode = translateToMorseCode(c);
+    bool firstSymbol = true;
 
     for (char c : morseCode) {
-        if (firstCharacter) {
-            firstCharacter = false;
+        // Play the symbol gap if a symbol has just been played.
+        if (firstSymbol) {
+            firstSymbol = false;
         } else {
-            play_symbol_gap();
+            playSymbolGap();
         }
         
         if (c == '.') {
-            play_dot();
+            playDot();
         } else {
-            play_dash();
+            playDash();
         }
     }
 }
 
-void play_dot() {
-    digitalWrite(buzzerPin, HIGH);
+void playDot() {
+    digitalWrite(BUZZER_PIN, HIGH);
     delay(dotTime);
-    digitalWrite(buzzerPin, LOW);
+    digitalWrite(BUZZER_PIN, LOW);
 }
 
-void play_dash() {
-    digitalWrite(buzzerPin, HIGH);
+void playDash() {
+    digitalWrite(BUZZER_PIN, HIGH);
     delay(dashTime);
-    digitalWrite(buzzerPin, LOW);
+    digitalWrite(BUZZER_PIN, LOW);
 }
 
-void play_symbol_gap() {
+void playSymbolGap() {
     delay(symbolGapTime);
 }
 
-void play_letter_gap() {
+void playLetterGap() {
     delay(letterGapTime);
 }
 
-void play_word_gap() {
+void playWordGap() {
     delay(wordGapTime);
 }
 
@@ -101,7 +118,7 @@ void play_word_gap() {
  * 
  * @return A string of fullstops (dots) and hyphens (dashes) representing the Morse Code.
  */
-String translate_to_morse_code(char c) {
+String translateToMorseCode(char c) {
     if (c == 'A' || c == 'a') {
         return ".-";
     } else if (c == 'B' || c == 'b') {
