@@ -4,6 +4,7 @@ This project plays a piece of text in Morse Code using a buzzer connected to an 
 ## Requirements
 - Arduino Uno (other boards should work)
 - Buzzer
+- Breadboard
 - 3 Jumper Wires
 - USB A (male) to USB B (male) Cable
 - [Arduino IDE](https://www.arduino.cc/en/software)
