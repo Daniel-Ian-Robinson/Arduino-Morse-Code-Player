@@ -1,7 +1,7 @@
 /***********************************************/
 
 /** The string to play in Morse Code. */
-const String string = "Insert your string here!";
+const String TEXT = "Insert your text here!";
 
 /** The Morse Code speed in Words Per Minute. */
 const float WPM = 8.0;
@@ -32,7 +32,7 @@ void setup() {
     pinMode(BUZZER_PIN, OUTPUT);
     digitalWrite(BUZZER_PIN, LOW);
     
-    playString(string);
+    playString(TEXT);
 }
 
 /**
