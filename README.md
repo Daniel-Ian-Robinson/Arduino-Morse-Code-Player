@@ -1,12 +1,8 @@
 # Arduino Morse Code Player
 This project plays a piece of text in Morse Code using a buzzer and an LED on an Arduino Uno board.
 
-Currently, this project can handle text containing any of the following characters:
-
-`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?":'-/()`
-
 ## Required Components
-- Arduino Uno (other boards should work)
+- Arduino Uno (although other boards should work)
 - Buzzer
 - LED
 - 220Ω Resistor
