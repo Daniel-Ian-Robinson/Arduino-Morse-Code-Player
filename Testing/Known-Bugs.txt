@@ -1,0 +1,1 @@
+If you use undefined characters like ~ the program will still pause for them. This means "~~~~~~~~H" will take longer to play the letter than "H".
