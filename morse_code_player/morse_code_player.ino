@@ -1,7 +1,6 @@
 /**
  * The string to play in Morse Code. You can use any upper or lower case letter, any digit,
- * or any of the following symbols: ,.?":'-/(). If you wish to use double quotes, ensure you
- * use an escape character.
+ * and any of the following symbols: ,.?":'-/()
  */
 const String TEXT = "Insert your text here.";
 
