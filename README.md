@@ -5,7 +5,7 @@ This project plays a piece of text in Morse Code using a buzzer and an LED on an
 - Arduino Uno (although other boards should work)
 - Buzzer
 - LED
-- 220Ω Resistor
+- 220Ω Resistor (or similar)
 - Breadboard
 - 5 Jumper Wires
 - USB A (male) to USB B (male) Cable
