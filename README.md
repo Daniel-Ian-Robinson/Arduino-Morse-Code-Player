@@ -19,4 +19,4 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 ## Schematic
 ![Schematic](https://github.com/Daniel-Ian-Robinson/Arduino-Morse-Code-Player/blob/main/Schematic/Schematic.png)
 
-*Note: the buzzer symbol is not accurate so inspect your buzzer carefully to ensure you connect the pins correctly.*
+*Note: The buzzer symbol is not accurate so inspect your buzzer carefully to ensure you connect the pins correctly.*
