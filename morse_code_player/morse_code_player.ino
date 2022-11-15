@@ -5,7 +5,7 @@
  */
 const String TEXT = "Insert your text here.";
 
-/** The Morse Code speed in Words Per Minute. */
+/** The Morse Code speed in Words Per Minute (A.K.A., the number of times it can play "PARIS " in a minute). */
 const float WPM = 9.0;
 
 /** The pin on the Arduino board connected to the LED. */
@@ -20,7 +20,7 @@ const int SYMBOL_GAP_TIME_UNITS = 1;
 const int LETTER_GAP_TIME_UNITS = 3;
 const int WORD_GAP_TIME_UNITS = 7;
 
-int msPerTimeUnit = 1200.0 / WPM;  // Based on the "PARIS " test word.
+int msPerTimeUnit = 1200.0 / WPM;
 int dotTime = DOT_TIME_UNITS * msPerTimeUnit;
 int dashTime = DASH_TIME_UNITS * msPerTimeUnit;
 int symbolGapTime = SYMBOL_GAP_TIME_UNITS * msPerTimeUnit;
