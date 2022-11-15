@@ -1,6 +1,6 @@
 /**
  * The string to play in Morse Code. You can use any upper or lower case letter, any digit,
- * and any of the following symbols: ,.?":'-/()
+ * and any of the following symbols: , . ? " : ' - / ( )
  */
 const String TEXT = "Insert your text here.";
 
@@ -27,7 +27,7 @@ int letterGapTime = LETTER_GAP_TIME_UNITS * msPerTimeUnit;
 int wordGapTime = WORD_GAP_TIME_UNITS * msPerTimeUnit;
 
 /**
- * Setup the buzzer and LED control pins and play the string in Morse Code.
+ * Set up the buzzer and LED control pins and play the string in Morse Code.
  */
 void setup() {
     pinMode(LED_PIN, OUTPUT);
@@ -92,42 +92,85 @@ void playCharacter(char c) {
     }
 }
 
+/**
+ * Plays a Morse Code dot on the buzzer and the LED.
+ */
 void playDot() {
-    digitalWrite(BUZZER_PIN, HIGH);
-    digitalWrite(LED_PIN, HIGH);
+    turnOnBuzzer();
+    turnOnLed();
     delay(dotTime);
-    digitalWrite(BUZZER_PIN, LOW);
-    digitalWrite(LED_PIN, LOW);
+    turnOffBuzzer();
+    turnOffLed();
 }
 
+/**
+ * Plays a Morse Code dash on the buzzer and the LED.
+ */
 void playDash() {
-    digitalWrite(BUZZER_PIN, HIGH);
-    digitalWrite(LED_PIN, HIGH);
+    turnOnBuzzer();
+    turnOnLed();
     delay(dashTime);
-    digitalWrite(BUZZER_PIN, LOW);
-    digitalWrite(LED_PIN, LOW);
+    turnOffBuzzer();
+    turnOffLed();
 }
 
+/**
+ * Waits the length of a Morse Code symbol gap by turning off the buzzer and LED.
+ */
 void playSymbolGap() {
     delay(symbolGapTime);
 }
 
+/**
+ * Waits the length of a Morse Code letter gap by turning off the buzzer and LED.
+ */
 void playLetterGap() {
     delay(letterGapTime);
 }
 
+/**
+ * Waits the length of a Morse Code word gap by turning off the buzzer and LED.
+ */
 void playWordGap() {
     delay(wordGapTime);
 }
 
 /**
+ * Turns the buzzer on.
+ */
+void turnOnBuzzer() {
+    digitalWrite(BUZZER_PIN, HIGH);
+}
+
+/**
+ * Turns the LED on.
+ */
+void turnOnLed() {
+    digitalWrite(LED_PIN, HIGH);
+}
+
+/**
+ * Turns the buzzer off.
+ */
+void turnOffBuzzer() {
+    digitalWrite(BUZZER_PIN, LOW);
+}
+
+/**
+ * Turns the LED off.
+ */
+void turnOffLed() {
+    digitalWrite(LED_PIN, LOW);
+}
+
+/**
  * Translates a character into Morse Code.
  * 
- * @param c The character to translate into Morse Code. The character can be any uppercase or lwoercase letter, any
- * digit, or one of the following special characters: , . ? " : ' - / ( ). If the character does not match one of these
-   characters, this function will return an empty string.
+ * @param c The character to translate into Morse Code. The character can be any uppercase or lowercase letter, any
+ * digit, or one of the following special characters: , . ? " : ' - / ( )
  * 
- * @return A string of fullstops (dots) and hyphens (dashes) representing the Morse Code.
+ * @return A string of fullstops (dots) and hyphens (dashes) representing the Morse Code. If the character does not match one of the
+   specified characters, this function will return an empty string.
  */
 String translateToMorseCode(char c) {
     if (c == 'A' || c == 'a') {
