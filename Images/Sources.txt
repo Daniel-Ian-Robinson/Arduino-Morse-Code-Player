@@ -1,2 +1,4 @@
 Morse-Code-Cheat-Sheet.jpg is from: https://www.merriam-webster.com/dictionary/Morse%20code
-Paris-Example is from: https://www.testandmeasurementtips.com/morse-code-the-first-serial-communication-protocol/
+
+Paris-Example.jpg is from: https://www.testandmeasurementtips.com/morse-code-the-first-serial-communication-protocol/
+This is a good example of how dots and dashes are timed, and how symbols, letters, and words are spaced out in Morse Code. It also shows the word "PARIS " which is the default word for measuring an encoder's speed in Words Per Minute (WPM). WPM is measured as the number of times the encoder can play "PARIS " (including the space) in a minute.
