@@ -1,6 +1,6 @@
 /**
- * The string to play in Morse Code. You can use any upper or lower case letter, any digit,
- * and any of the following symbols: , . ? " : ' - / ( )
+ * The string to play in Morse Code. You can use any upper or lower case letter, any digit, and any of the following
+   symbols: , . ? " : ' - / ( )
  */
 const String TEXT = "Insert your text here.";
 
@@ -169,8 +169,8 @@ void turnOffLed() {
  * @param c The character to translate into Morse Code. The character can be any uppercase or lowercase letter, any
  * digit, or one of the following special characters: , . ? " : ' - / ( )
  * 
- * @return A string of fullstops (dots) and hyphens (dashes) representing the Morse Code. If the character does not match one of the
-   specified characters, this function will return an empty string.
+ * @return A string of fullstops (dots) and hyphens (dashes) representing the Morse Code. If the character does not
+   match one of the specified characters, this function will return an empty string.
  */
 String translateToMorseCode(char c) {
     if (c == 'A' || c == 'a') {
