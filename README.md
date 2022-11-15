@@ -1,29 +1,22 @@
 # Arduino Morse Code Player
 This project plays a piece of text in Morse Code using a buzzer and an LED on an Arduino Uno board.
 
-Currently, I have encoded all of the following characters:
-
-`ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?":'-/()`
-
 ## Required Components
-- Arduino Uno (other boards should work)
+- Arduino Uno (although other boards should work)
 - Buzzer
 - LED
-- 220Ω Resistor
+- Resistor
 - Breadboard
 - 5 Jumper Wires
 - USB A (male) to USB B (male) Cable
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
 ## Compile and Run
-Setup the components according to the [Schematic](#schematic) below.
+Set up the components according to the [Schematic](#schematic) below.
 
-Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in the Arduino IDE. Please note, this file must be within a folder named "morse_code_player". At the top of the code, enter the text you want it to play and the Morse Code speed you want to it to use. Finally, connect your Arduino to your computer with the USB cable and press "Upload" in the IDE.
+Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in the Arduino IDE. Please note, this file must be within a folder named "morse_code_player". At the top of the code, enter the text you want it to play and the Morse Code speed you want to it to use. Finally, connect your Arduino board to your computer with the USB cable and press "Upload" in the IDE.
 
 ## Schematic
 ![Schematic](https://github.com/Daniel-Ian-Robinson/Arduino-Morse-Code-Player/blob/main/Schematic/Schematic.png)
 
-*Note: the buzzer symbol is not accurate so inspect your buzzer to connect the pins correctly.*
-
-## Words Per Minute
-This code measures its Morse Code speed in words per minute (WPM). This is the number of times the program can play the word `"PARIS "` (including the space at the end) in a minute. This is a standard measure.
+*Note: The buzzer symbol is not accurate so inspect your buzzer carefully to ensure you connect the pins correctly.*
