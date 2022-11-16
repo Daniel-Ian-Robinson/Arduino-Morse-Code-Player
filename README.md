@@ -26,4 +26,4 @@ Next, open [morse_code_player.ino](morse_code_player/morse_code_player.ino) in t
 
 ![CC BY Licence](https://licensebuttons.net/l/by/3.0/88x31.png)
 
-[CC BY Licence](https://creativecommons.org/licenses/by/4.0/)
+[CC BY 4.0 Licence](https://creativecommons.org/licenses/by/4.0/)
